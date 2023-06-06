@@ -2,7 +2,7 @@ ul{
     list-style: none;
 }
 
-li{
+li:nth-of-type(odd){
     background-color: #c1c1c1
 }
 

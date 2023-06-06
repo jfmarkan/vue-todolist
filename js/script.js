@@ -21,18 +21,32 @@ createApp({
                     done: true,
                 },
             ],
+            newToDo: '',
         }
     },
     methods: {
         addNewToDoElement(toDoElement) {
-            this.todoList.push({
-              text: toDoElement,
-              done: false,
-            });
+            if (this.newToDo !== ""){
+                this.todoList.push({
+                    text: toDoElement,
+                    done: false,
+                });
+                this.newToDo = "";
+            }
         },
 
         markComplete(){
-            this.todoItem.done = !this.todoItem.done
-        }
+            this.done = !this.done
+        },
+
+        removeToDoElement(toDoElementIndex) {
+            if( toDoElementIndex >= this.todoList.length || toDoElementIndex < 0) {
+                console.log('Invalid index');
+            } else {
+                this.todoList.splice(toDoElementIndex, 1);
+            }
+        },
+
+        checkStatus()
     }
 }).mount('#app');

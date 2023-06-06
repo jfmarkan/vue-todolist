@@ -20,8 +20,9 @@
             </div>
             <div>
                 <ul>
-                    <li v-for="todo in todoList" @click="">
+                    <li v-for="todo in todoList" @click="markComplete">
                         {{todo.text}}
+                        <i class="fa-solid fa-xmark" @click="removeToDoElement"></i>
                     </li>
                 </ul>
             </div>
