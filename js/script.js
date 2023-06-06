@@ -19,16 +19,20 @@ createApp({
                 }, {
                     text: 'Phone my mom',
                     done: true,
-                }
+                },
             ],
-            newToDo: '',
-            defaultStatus=false;
         }
     },
     methods: {
-        addNewToDoElement(toDoElement, defaultStatus){
-            this.todoList.text.push(toDoElement);
-            this.todoList.done.push(this.defaultStatus);
+        addNewToDoElement(toDoElement) {
+            this.todoList.push({
+              text: toDoElement,
+              done: false,
+            });
+        },
+
+        markComplete(){
+            this.todoItem.done = !this.todoItem.done
         }
     }
 }).mount('#app');
