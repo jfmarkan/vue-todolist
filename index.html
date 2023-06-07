@@ -12,17 +12,17 @@
 <body>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <div id="app">
-        <div class="container bg-light">
-            <div>
-                <h2 class="todo-title">ToDo List</h2>
-            <input type="text" v-model="newToDo">
+        <div class="container bg-light w-25">
+            <div class="text-center">
+            <h2>ToDo List</h2>
+            <input type="text" v-model="newToDo" class="me-2 mb-4">
             <button class="btn btn-primary btn-sm" @click="addNewToDoElement(newToDo)">+</button>
             </div>
             <div>
                 <ul>
-                    <li v-for="todo in todoList" @click="markComplete">
-                        {{todo.text}}
-                        <i class="fa-solid fa-xmark" @click="removeToDoElement"></i>
+                    <li v-for="(todo, index) in todoList"  class="d-flex justify-content-between p-2" :class="todo.done ? 'completed' : ''">
+                        <div @click="updateStatus(index)">{{todo.text}}</div>
+                        <div><i class="fa-solid fa-xmark" @click="removeToDoElement(index)"></i></div>
                     </li>
                 </ul>
             </div>

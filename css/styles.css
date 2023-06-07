@@ -2,6 +2,8 @@ ul{
     list-style: none;
 }
 
+
+
 li:nth-of-type(odd){
     background-color: #c1c1c1
 }
@@ -9,3 +11,4 @@ li:nth-of-type(odd){
 .completed {
     text-decoration: line-through;
 }
+

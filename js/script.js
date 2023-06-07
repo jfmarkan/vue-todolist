@@ -35,10 +35,6 @@ createApp({
             }
         },
 
-        markComplete(){
-            this.done = !this.done
-        },
-
         removeToDoElement(toDoElementIndex) {
             if( toDoElementIndex >= this.todoList.length || toDoElementIndex < 0) {
                 console.log('Invalid index');
@@ -47,6 +43,8 @@ createApp({
             }
         },
 
-        checkStatus()
+        updateStatus(elementIndex){
+            this.todoList[elementIndex].done = !this.todoList[elementIndex].done
+        },
     }
 }).mount('#app');
